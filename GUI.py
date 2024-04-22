@@ -160,13 +160,13 @@ root.title("MNIST Neural Network Tester")
 
 
 # Parameters Frame
-paramsFrame = tk.Frame(root, background="blue")
+paramsFrame = tk.Frame(root)
 paramsFrame.grid(row=0, column=0, padx="5px", pady="5px")
-iterationsFrame = tk.Frame(paramsFrame, background="blue")
+iterationsFrame = tk.Frame(paramsFrame)
 iterationsFrame.grid(row=0, column=0, padx="5px", pady="5px")
-alphaFrame = tk.Frame(paramsFrame, background="blue")
+alphaFrame = tk.Frame(paramsFrame)
 alphaFrame.grid(row=1, column=0, padx="5px", pady="5px")
-saveLoadFrame = tk.Frame(paramsFrame, background="blue")
+saveLoadFrame = tk.Frame(paramsFrame)
 saveLoadFrame.grid(row=3, column=0, padx="5px", pady="5px")
 
 tk.Label(iterationsFrame, text="Iterations: ").grid(row=0, column=0, padx="5px")
@@ -185,12 +185,12 @@ tk.Button(saveLoadFrame, text="Load Parameters", command=loadParams).grid(row=0,
 
 
 # Image Frame
-imageFrame = tk.Frame(root, background="pink")
+imageFrame = tk.Frame(root)
 imageFrame.grid(row=0, column=1, padx="5px", pady="5px")
 
 tk.Label(imageFrame, text="Image Index:").grid(row=0, column=0, padx="5px", pady="5px")
 
-imageIndexFrame = tk.Frame(imageFrame, background="pink")
+imageIndexFrame = tk.Frame(imageFrame)
 imageIndexFrame.grid(row=1, column=0, padx="5px", pady="5px")
 
 tk.Button(imageIndexFrame, text="<<", command=lambda: loadImage(int(imageIndexEntry.get())-1)).grid(row=0, column=0, padx="5px", pady="5px")
@@ -206,7 +206,7 @@ tk.Button(imageFrame, text="Load Image", command=lambda: loadImage(int(imageInde
 
 
 # Data Frame
-dataFrame = tk.Frame(root, background="green")
+dataFrame = tk.Frame(root)
 dataFrame.grid(row=0, column=2, padx="5px", pady="5px")
 
 
