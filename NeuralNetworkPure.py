@@ -9,6 +9,7 @@
 
 import numpy as np
 import pandas as pd
+import os
 
 def getData(traingDataPath, testingDataPath):
     trainingData = np.array(pd.read_csv(traingDataPath)).T
@@ -96,9 +97,10 @@ def gradientDescent(trainingLabels, trainingImages, testingLabels, testingImages
         predictions = getPredictions(output)
         accuracy = getAccuracy(predictions, testingLabels)
 
-        print(f"Iteration {j}: {accuracy}% accuracy")
+        os.system("cls")
+        print(f"{j+1: <5} {'=' * int(accuracy)}{'-' * (100-int(accuracy))} {round(accuracy, 2)}% accuracy")
             
-    return L1W, L1B, L2W, L2B
+    return L1W, L1B, L2W, L2B  
 
 trainingLabels, trainingImages, testingLabels, testingImages = getData("mnist_train.csv", "mnist_test.csv")
 gradientDescent(trainingLabels, trainingImages, testingLabels, testingImages, 1000, 0.1)
